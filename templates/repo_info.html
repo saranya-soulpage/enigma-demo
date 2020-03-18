@@ -1,0 +1,63 @@
+{%extends 'base.html'%}{% load staticfiles %}{%block content%}
+<div class="container custom-container">
+  <div class="row h-100 justify-content-center">
+    <div class="d-flex col-12 p-0 py-5 align-items-center">
+      <div class="col-4 flex-fill ">
+        <div class="card shadow repo-card">
+          <div class="card-title custom-card-title text-white text-center py-3">
+            <span>Repo Name</span>
+          </div>
+
+          <div class="card-body text-center ">
+            <p class="card-text">{{ repo_name }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 flex-fill ">
+        <div class="card shadow repo-card">
+          <div class="card-title custom-card-title text-white text-center py-3">
+            <span>Languages Used</span>
+          </div>
+
+          <div class="card-body text-center ">
+            <p class="card-text">{{ repo_info_languages }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 flex-fill ">
+        <div class="card shadow repo-card">
+          <div class="card-title custom-card-title text-white text-center py-3">
+            <span>Collaborators</span>
+          </div>
+
+          <div class="card-body text-center ">
+            <p class="card-text">{{ collab }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table
+      class="table table-bordered table-responsive bg-white shadow m-3 custom-table"
+    >
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Date</th>
+          <th>Commit Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for commit_info in commits %}
+        <tr>
+          <td>{{ commit_info.0.name }}</td>
+          <td>{{ commit_info.0.email }}</td>
+          <td>{{ commit_info.0.date }}</td>
+          <td>{{ commit_info.1 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

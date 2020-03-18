@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+        background: linear-gradient(
+          40deg,
+          rgba(69, 202, 252, 0.9),
+          rgba(48, 63, 159, 0.9)
+        ) !important;
+      }
+      .custom-container {
+        height: 90%;
+      }
+      .login-container {
+        background: linear-gradient(
+          40deg,
+          rgba(69, 202, 252, 0.9),
+          rgba(48, 63, 159, 0.9)
+        ) !important;
+      }
+      .custom-navbar {
+        background: linear-gradient(
+          40deg,
+          rgba(69, 202, 252, 0.9),
+          rgba(48, 63, 159, 0.9)
+        ) !important;
+
+        text-transform: uppercase;
+      }
+      .custom-navbar a {
+        color: inherit;
+      }
+      .site-title {
+        font-size: 22px;
+        font-weight: 600;
+      }
+      .custom-navbar a:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+      .custom-card-title {
+        background: linear-gradient(
+          40deg,
+          rgba(69, 202, 252, 0.9),
+          rgba(48, 63, 159, 0.9)
+        ) !important;
+      }
+      .custom-btn {
+        color: #fff;
+        border: none;
+        font-size: 22px;
+      }
+      .custom-btn:hover {
+        color: #fff;
+      }
+      .custom-btn.active {
+        font-weight: 600;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+      }
+      .t-header {
+        font-weight: 600;
+      }
+      .t-text {
+        justify-content: center;
+      }
+      .custom-table {
+        max-height: 500px;
+      }
+      .custom-table thead {
+        text-align: center;
+        color: #fff;
+        background-color: linear-gradient(
+          40deg,
+          rgba(69, 202, 252, 0.9),
+          rgba(48, 63, 159, 0.9)
+        ) !important;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm custom-navbar text-white shadow">
+      <a class="navbar-brand" href="#"
+        ><span class="site-title">ENIGMA</span></a
+      >
+      <button
+        class="navbar-toggler d-lg-none"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      ></button>
+      {%if user.is_authenticated%}
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="collapsibleNavId"
+      >
+        <ul class="navbar-nav ">
+          <li class="nav-item ">
+            <a class="nav-link" href="/"
+              ><button class="btn btn-lg custom-btn active">Home</button></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/accounts/profile/"
+              ><button class="btn btn-lg custom-btn">Profile</button></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/api/logout/"
+              ><button class="btn btn-lg custom-btn">Logout</button></a
+            >
+          </li>
+        </ul>
+      </div>
+      {%endif%}
+    </nav>
+    {% block content %} {% endblock content %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

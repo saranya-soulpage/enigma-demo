@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Repo List</h1>
+{% for i in context %}
+<a href="/repo_info/{{i}}/">{{ i }}</a><br>
+{% endfor %}
+
+{% endblock %}
